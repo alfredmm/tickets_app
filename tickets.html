@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <title>Seattle Walking Tour Tickets</title>
+        <script>
+           function totalTicket()
+            {
+            tickets = document.getElementById("number_tickets").value;
+            document.getElementById("total").innerHTML = (tickets * 14.99) +1.99;
+            }
+            function clear()
+            {
+            document.getElementById('number_tickets').value = '';
+            document.getElementById('total').innerHTML = '';
+            }
+        </script>
+        <style>
+            /* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.right {
+  right: 0;
+  background-color: rgb(211, 78, 74);
+}
+
+
+.left {
+  left: 0;
+  background-color: rgb(214, 132, 159);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+img {
+  width: 700px;
+  height: 700px;
+}
+.button:hover {
+  background-color: #d2e2e9;
+  color: rgb(112, 180, 138);
+  padding: 10px 24px;
+}
+        </style>
+    </head>
+
+    <body>
+        <div class="split left">
+            <div class="centered">
+                <h1 style="color: black;">Seattle Walking Tour Tickets</h1>
+                <h2>$14.99 per Ticket</h2>
+                <label>Enter the Number of Tickets</label>
+                <input type="text" placeholder="" id="number_tickets">
+                <p style="size: 30px;"><b>Total Cost of Tickets ($):: </b>
+                    <span id = "total" ></span>
+                </p>
+                <button onclick="totalTicket()" style="background-color: rgb(224, 190, 216); border-radius:20%; size: 40px;">Display Cost</button>
+                <button type="button" onclick="window.clear()">Clear </button>
+                <button type="button" onclick="window.open('', '_self', ''); window.close();">Exit</button>
+            </div>
+        </div>
+        <div class="split right">
+            <div class="centered">
+              <img src="seattle.jpg" alt="Seattle">
+            </div>
+          </div>
+    </body>
+</html>
